@@ -71,6 +71,8 @@ function createDOM(objectFromJSON) {
                         const inputForm = document.createElement('input');
                         const button = document.createElement('button');
                         inputForm.placeholder = `count: ${objectFromJSON[key][0]['count']}`;
+                        inputForm.type = 'number';
+                        inputForm.min = '0';
                         form.appendChild(inputForm);
                         button.innerText = 'Change';
                         form.appendChild(button);
@@ -85,9 +87,11 @@ function createDOM(objectFromJSON) {
 
                 if (objectFromJSON[key][1].hasOwnProperty(numberValue[0])) {
                     const form = document.createElement('form');
-                    const inputForm = document.createElement('input');
+                    let inputForm = document.createElement('input');
                     const button = document.createElement('button');
                     inputForm.placeholder = `merchantIdx: ${objectFromJSON[key][1]['merchantIdx']}`;
+                    inputForm.type = 'number';
+                    inputForm.min = '0';
                     form.appendChild(inputForm);
                     button.innerText = 'Change';
                     form.appendChild(button);
